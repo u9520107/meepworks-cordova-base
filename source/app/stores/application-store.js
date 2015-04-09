@@ -11,7 +11,7 @@ export default class ApplicationStore extends StoreBase {
   }
   get handlers() {
     return [{
-      action: TestAction.symbol,
+      action: TestAction,
       handler: this.handleTestAction
     }];
   }
