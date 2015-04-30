@@ -2,6 +2,8 @@ import gulp from 'gulp';
 import * as config from './config';
 import * as gb from 'greasebox';
 import plumber from 'gulp-plumber';
+import babel from 'gulp-babel';
+import sourcemaps from 'gulp-sourcemaps';
 
 gulp.task('build', ['build:js', 'build:copy'], () => {});
 
@@ -11,11 +13,11 @@ gulp.task('build:js', ['clean:build'], (cb) => {
     .pipe(plumber({
       errorHandler: cb
     }))
-    .pipe(gb.loadMap())
-    .pipe(gb.babelTransform({
+    .pipe(sourcemaps.init())
+    .pipe(babel({
       optional: ['runtime']
     }))
-    .pipe(gb.writeMap())
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(config.paths.build))
     .on('end', cb);
 });

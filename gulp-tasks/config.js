@@ -9,4 +9,8 @@ export const paths = {
 
 
 
-gulp.task('config', () => {});
+gulp.task('config', () => {
+  console.log(JSON.stringify({
+    paths
+  }, null, 2));
+});

@@ -4,35 +4,42 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "jspm dl-loader --babel --yes && jspm install"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {},
   "jspm": {
     "directories": {
-      "lib": ".",
-      "packages": "jspm_packages"
+      "lib": "."
     },
     "configFile": "jspm_packages/config.js",
     "dependencies": {
       "asset": "npm:meepworks-assets@^0.1.9",
-      "babel-runtime": "npm:babel-runtime@4.7.16",
-      "co": "npm:co@^4.4.0",
+      "babel-runtime": "npm:babel-runtime@5.1.13",
+      "co": "npm:co@^4.5.2",
       "css": "github:systemjs/plugin-css@^0.1.6",
-      "greasebox": "npm:greasebox@^0.9.1",
-      "meepworks": "npm:meepworks@^0.7.13",
+      "greasebox": "npm:greasebox@^0.11.4",
+      "meepworks": "npm:meepworks@^0.8.1",
       "normalize.css": "github:necolas/normalize.css@^3.0.2",
-      "react": "npm:react@^0.13.0"
+      "react": "npm:react@^0.13.2"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
     }
   },
   "devDependencies": {
-    "co": "^4.4.0",
+    "co": "^4.5.2",
     "co-exec": "^1.1.0",
-    "greasebox": "^0.9.1",
+    "greasebox": "^0.11.4",
+    "babel-runtime": "5.1.13",
     "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
     "gulp-plumber": "^1.0.0",
-    "gulp-uglify": "^1.1.0",
-    "babel-runtime": "4.7.16"
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.1.0"
   }
 }
