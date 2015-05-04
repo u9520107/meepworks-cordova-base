@@ -24,6 +24,7 @@ gulp.task('build:js', ['clean:build'], (cb) => {
 
 gulp.task('build:copy', ['clean:build'], (cb) => {
   gulp.src([`${config.paths.source}/**/*`, `!${config.paths.source}/**/*.js`, `!${config.paths.source}/index.html`])
-    .pipe(gulp.dest(config.paths.build));
+    .pipe(gulp.dest(config.paths.build))
+    .on('end', cb);
 });
 
